@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "diagnostics": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react",
+    "lib": [
+        "dom",
+        "es2015",
+        "es2016"
+    ],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "target": "es5",
+    "types": [
+      "react",
+      "react-dom"
+    ]
+  },
+  "include": [
+    "./src"
+  ]
+}
