@@ -1,6 +1,6 @@
 # React From Sctach
 > Author: Nitish Dayal, Software & Applications Developer  
-> Contact: [Click here to go to my unimpressive portfolio and email me!](//nitishdayal.me)
+> Contact: [Click here to go to my unimpressive portfolio and email me!](http://nitishdayal.me)
 
 Before one can create-react-app, one should be able to create a React app.  
 
