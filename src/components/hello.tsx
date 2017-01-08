@@ -1,9 +1,15 @@
-import React from 'react';
+import * as React from 'react';
 
-export interface HelloProps { compiler: string; framework: string }
+export interface HelloProps { 
+  compiler: string; 
+  framework: string;
+  bundler: string;
+}
 
 export class App extends React.Component<HelloProps, undefined> {
+  private message = `Hello from ${this.props.framework}, running on ${this.props.compiler}
+     and bundled with ${this.props.bundler}`
   render() {
-    return <h1>Hello from {this.props.compiler} and {this.props.framework}!</h1>
+    return <h1>{this.message}!</h1>
   }
 }

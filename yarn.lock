@@ -2471,6 +2471,10 @@ webpack-sources@^0.1.0:
     source-list-map "~0.1.0"
     source-map "~0.5.3"
 
+webpack-split-by-path@^0.1.0-beta.1:
+  version "0.1.0-beta.1"
+  resolved "https://registry.yarnpkg.com/webpack-split-by-path/-/webpack-split-by-path-0.1.0-beta.1.tgz#c135ff9a21154124bd4b7ea0c41f41adeaf21bcf"
+
 webpack@^2.2.0-rc.3:
   version "2.2.0-rc.3"
   resolved "https://registry.yarnpkg.com/webpack/-/webpack-2.2.0-rc.3.tgz#ac072c06c88aae75abdfd33510e7c5fd965f843f"

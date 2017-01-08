@@ -1,5 +1,8 @@
-# Stupid Mac Nonsense
+# Stupid Mac nonsense
 .DS_Store
+
+# Build
+dist
 
 # Logs
 logs
