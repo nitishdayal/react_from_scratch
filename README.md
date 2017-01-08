@@ -5,8 +5,8 @@
 Before one can create-react-app, one should be able to create a React app.  
 
 
-I'ma learn me some React! Tracking progress here because blogs are weird and Medium
-  is entirely too overwhelming.
+I'ma learn me some React! Tracking day-to-day progress because apparently that's the cool
+  thing to do.
 
 ## Progress
 
