@@ -1,18 +1,19 @@
 'use strict';
 
-var path = require('path')
-var webpack = require('webpack')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
-var DashboardPlugin = require('webpack-dashboard/plugin')
+const path = require('path')
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const DashboardPlugin = require('webpack-dashboard/plugin')
 
-module.exports = function (env) {
+module.exports = env => {
   return {
     context: path.resolve(__dirname, "src"),
+    devtool: env === 'prod' ? 'source-map' : 'cheap-module-eval-source-map',
     entry: {
-      main: "./main.tsx",
+      main: './main.tsx',
       vendor: [
-        "react",
-        "react-dom"
+        'react',
+        'react-dom'
       ]
     },
     output: {
@@ -20,6 +21,7 @@ module.exports = function (env) {
       filename: '[chunkhash].[name].js',
     },
     plugins: [
+      new DashboardPlugin(),
       new webpack.optimize.CommonsChunkPlugin({
         name: 'vendor'
       }),
@@ -27,21 +29,22 @@ module.exports = function (env) {
       new HtmlWebpackPlugin({
         template: "../index.html",
         appMountId: 'content'
-      }),
-      new DashboardPlugin()
+      })
     ],
     module: {
       rules: [
         {
           test: /\.ts(x?)$/,
-          exclude: '/node_modules/',
+          include: path.resolve(__dirname, "src"),
+          options: {
+            preLoaders: 'source-map-loader',
+          },
           loader: 'awesome-typescript-loader'
         }
-      ], 
+      ] 
     },
-    devtool: 'source-map',
     resolve: {
-      extensions: ['.ts', '.tsx', '.js', '.html']
+      extensions: ['.webpack.js','.ts', '.tsx', '.js']
     }
   }
 }
