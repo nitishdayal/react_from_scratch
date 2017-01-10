@@ -3,6 +3,7 @@
 var path = require('path')
 var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var DashboardPlugin = require('webpack-dashboard/plugin')
 
 module.exports = function (env) {
   return {
@@ -26,20 +27,19 @@ module.exports = function (env) {
       new HtmlWebpackPlugin({
         template: "../index.html",
         appMountId: 'content'
-      })
+      }),
+      new DashboardPlugin()
     ],
     module: {
-      rules: [{
-        test: /\.ts(x?)$/,
-        exclude: '/node_modules/',
-        loader: 'awesome-typescript-loader'
-      },{
-        test: /\.html$/,
-        exclude: '/node_modules/',
-        loader: 'html-loader'
-      }]
+      rules: [
+        {
+          test: /\.ts(x?)$/,
+          exclude: '/node_modules/',
+          loader: 'awesome-typescript-loader'
+        }
+      ], 
     },
-    devtool: "cheap-module-eval-source-map",
+    devtool: 'source-map',
     resolve: {
       extensions: ['.ts', '.tsx', '.js', '.html']
     }
