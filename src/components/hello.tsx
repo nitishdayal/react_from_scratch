@@ -1,15 +1,9 @@
-import * as React from 'react';
+import React from 'react';
 
-export interface HelloProps { 
-  compiler: string; 
-  framework: string;
-  bundler: string;
-}
+const App = (props: HelloProps) => <h1>{getMessage(props)}</h1>
 
-export class App extends React.Component<HelloProps, undefined> {
-  private message = `Hello from ${this.props.framework}, running on ${this.props.compiler}
-     and bundled with ${this.props.bundler}`
-  render() {
-    return <h1>{this.message}!</h1>
-  }
-}
+const getMessage =
+  ({ bundler, compiler, framework }: HelloProps) =>
+    `Hello from ${framework}, running on ${compiler} and bundled with ${bundler}!`;
+
+export default App;

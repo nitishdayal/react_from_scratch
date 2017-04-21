@@ -1,9 +1,17 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import React from 'react';
+import { render } from 'react-dom';
 
-import { App } from './components/hello';
+import App from './components/hello';
+import Root from './containers/root'
 
-ReactDOM.render(
-  <App compiler="TypeScript" framework="React" bundler="Webpack@2.2.0-rc.3"/>,
+
+const RootElement = (
+  <Root>
+    <App bundler="Webpack" compiler="TypeScript" framework="React" />
+  </Root>
+)
+
+render(
+  RootElement,
   document.getElementById('content')
 );
