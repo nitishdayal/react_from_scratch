@@ -18,7 +18,8 @@
       "react",
       "react-dom",
       "node",
-      "webpack-env"
+      "webpack-env",
+      "react-router-dom"
     ]
   },
   "exclude": [

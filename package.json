@@ -7,21 +7,20 @@
   "author": "Nitish Dayal <nitishdayal@outlook.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack-dashboard -- webpack-dev-server --env='development' --open -w;",
-    "start": "webpack-dashboard -- webpack-dev-server --env='production' --open;",
-    "build": "rm -rf dist; webpack --env='production';",
-    "webpack": "webpack --config webpack.config.js",
-    "webpack-dev-server": "webpack-dev-server --config webpack.config.js"
+    "dev": "webpack-dashboard -- webpack-dev-server --config webpack.config.js --env='development' --open -w;",
+    "start": "webpack-dashboard -- webpack-dev-server --config webpack.config.js --env='production' --open;",
+    "build": "rm -rf dist; webpack --config webpack.config.js --env='production';"
   },
   "dependencies": {
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-router-dom": "^4.1.1"
   },
   "devDependencies": {
     "@types/node": "^7.0.13",
     "@types/react": "^15.0.22",
     "@types/react-dom": "^15.5.0",
-    "@types/webpack": "^2.2.15",
+    "@types/react-router-dom": "^4.0.4",
     "@types/webpack-env": "^1.13.0",
     "chunk-manifest-webpack-plugin": "^1.0.0",
     "html-webpack-plugin": "^2.28.0",

@@ -14,7 +14,8 @@ module.exports = env => ({
     main: path.resolve(__dirname, 'src/main.tsx'),
     vendor: [
       'react',
-      'react-dom'
+      'react-dom',
+      'react-router-dom'
     ]
   },
   output: {
@@ -64,5 +65,11 @@ module.exports = env => ({
   ],
   resolve: {
     extensions: ['.webpack.js', '.ts', '.tsx', '.js']
+  },
+  devServer: {
+    compress: true,
+    historyApiFallback: true,
+    port: 8080,
+    watchContentBase: true
   }
 })

@@ -19,9 +19,9 @@ Currently, this boilerplate uses:
 
 -   [ ] HMR please
 -   [ ] VSCode debugger + task runner config
--   [ ] React Router
 -   [ ] MobX
--   [ ] Styled Components (or CSS modules or something idk)
+-   [ ] Styled Components (or CSS modules or...who knows)
+-   [ ] TSLint or ESLint or something. Maybe just Prettier the whole damn thing idk.
 
 ## Prerequisites
 
