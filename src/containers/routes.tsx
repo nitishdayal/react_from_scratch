@@ -51,7 +51,7 @@ const Routes = () => (
           component={Page2} />
         <Route
           exact path="/"
-          render={() => (<Hello bundler="Webpack" compiler="TypeScript" framework="React" />)} />
+          render={() => (<Hello bundler="Webpack" compiler="TypeScript" framework="(P?)React" />)} />
       </RouterWrapper>
     </Root>
   </Router>
