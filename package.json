@@ -11,7 +11,8 @@
     "dev:preact": "webpack-dashboard -- webpack-dev-server --config webpack.preact.config.js --env=['development','preact'] --open;",
     "start": "webpack-dashboard -- webpack-dev-server --config webpack.config.js --env='production' --open;",
     "start:preact": "webpack-dashboard -- webpack-dev-server --config webpack.preact.config.js --env=['production','preact'] --open;",
-    "build": "rm -rf dist; webpack --config webpack.config.js --env='production';"
+    "build": "rm -rf dist; webpack --config webpack.config.js --env='production';",
+    "build:preact": "rm -rf dist; webpack --config webpack.preact.config.js --env='production';"
   },
   "dependencies": {
     "polished": "^1.0.3",
