@@ -9,13 +9,15 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = env => ({
   context: __dirname,
-  devtool: env === 'production' ? 'source-map' : 'cheap-module-eval-source-map',
+  devtool: JSON.stringify(env).includes('production') ? 'source-map' : 'cheap-module-eval-source-map',
   entry: {
     main: path.resolve(__dirname, 'src/main.tsx'),
     vendor: [
+      'polished',
       'react',
       'react-dom',
-      'react-router-dom'
+      'react-router-dom',
+      'styled-components'
     ]
   },
   output: {
@@ -27,7 +29,7 @@ module.exports = env => ({
     rules: [
       {
         test: /\.ts(x?)$/,
-        include: path.resolve(__dirname, "src"),
+        include: path.resolve(__dirname, 'src'),
         use: [
           {
             loader: 'source-map-loader',
@@ -52,7 +54,8 @@ module.exports = env => ({
     }),
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify(env)
+        NODE_ENV: JSON.stringify(env).includes('production') && JSON.stringify('production'),
+        preact: JSON.stringify(env).includes('preact')
       }
     }),
     new webpack.HashedModuleIdsPlugin(),
@@ -64,7 +67,8 @@ module.exports = env => ({
     new UglifyJSPlugin(),
   ],
   resolve: {
-    extensions: ['.webpack.js', '.ts', '.tsx', '.js']
+    extensions: ['.webpack.js', '.ts', '.tsx', '.js'],
+    alias: {}
   },
   devServer: {
     compress: true,

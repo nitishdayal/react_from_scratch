@@ -7,14 +7,18 @@
   "author": "Nitish Dayal <nitishdayal@outlook.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack-dashboard -- webpack-dev-server --config webpack.config.js --env='development' --open -w;",
+    "dev": "webpack-dashboard -- webpack-dev-server --config webpack.config.js --env=['development']--open;",
+    "dev:preact": "webpack-dashboard -- webpack-dev-server --config webpack.preact.config.js --env=['development','preact'] --open;",
     "start": "webpack-dashboard -- webpack-dev-server --config webpack.config.js --env='production' --open;",
+    "start:preact": "webpack-dashboard -- webpack-dev-server --config webpack.preact.config.js --env=['production','preact'] --open;",
     "build": "rm -rf dist; webpack --config webpack.config.js --env='production';"
   },
   "dependencies": {
+    "polished": "^1.0.3",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-router-dom": "^4.1.1"
+    "react-router-dom": "^4.1.1",
+    "styled-components": "^1.4.5"
   },
   "devDependencies": {
     "@types/node": "^7.0.13",
@@ -24,6 +28,8 @@
     "@types/webpack-env": "^1.13.0",
     "chunk-manifest-webpack-plugin": "^1.0.0",
     "html-webpack-plugin": "^2.28.0",
+    "preact": "^8.1.0",
+    "preact-compat": "^3.15.0",
     "react-hot-loader": "^3.0.0-beta.6",
     "source-map-loader": "^0.2.1",
     "ts-loader": "^2.0.3",
@@ -32,6 +38,6 @@
     "webpack": "^2.4.1",
     "webpack-chunk-hash": "^0.4.0",
     "webpack-dashboard": "^0.3.0",
-    "webpack-dev-server": "^2.4.2"
+    "webpack-dev-server": "^2.4.3"
   }
 }
