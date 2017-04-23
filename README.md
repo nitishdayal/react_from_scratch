@@ -1,7 +1,7 @@
 # React From Scratch: TypeScript + React + Webpack boilerplate
 
 > Author: Nitish Dayal, Software & Applications Developer  
-> Last Commit Date: April 22nd, 2017
+> Last Commit Date: April 23nd, 2017
 
 ## About
 
@@ -23,7 +23,7 @@ Currently, this boilerplate uses:
 **TODO:**
 
 -   [ ] HMR please
--   [ ] VSCode debugger + task runner config
+-   [ ] ✅ VSCode debugger + task runner config (half way there!)
 -   [ ] MobX
 -   [ ] TSLint or ESLint or something. Maybe just Prettier the whole damn thing idk.
 
