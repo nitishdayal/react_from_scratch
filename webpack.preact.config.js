@@ -1,12 +1,10 @@
-const baseWebpackConf = require('./webpack.config');
-
 module.exports = env => {
-  const base = baseWebpackConf(env);
+  const baseConfig = require('./webpack.config')(env)
 
-  base.resolve.alias = {
+  baseConfig.resolve.alias = {
     'react': 'preact-compat',
     'react-dom': 'preact-compat'
   }
 
-  return base;
+  return baseConfig
 }
