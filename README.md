@@ -59,6 +59,7 @@ Global:
 -   `npm start`/`yarn start`: Start development environment
 -   `npm run dist`/`yarn dist`: Create distribution bundle
 -   `npm run dist:preact`/`yarn dist:preact`: Create distribution bundle, utilizing Preact via preact-compat to reduce vendor bundle (learn more about Preact, you'll end up learning more about React).
+    -   `npm run start:preact`/`yarn start:preact`: Test out the Preact build ~~(just in case, u no)~~
 
 ## Errors
 
