@@ -16,35 +16,19 @@ rootRender = (Component) => {
   );
 };
 
-const init = () => {
-  // tslint:disable
-  injectGlobal`${normalize()}`
-  // tslint:enable
 
-  if (process.env.preact) {
-    console.log('PREACT BB');
-    const render = require('preact').render;
+// tslint:disable
+injectGlobal`${normalize()}`
 
-    if (process.env.NODE_ENV !== 'production') {
-      require('preact/devtools');
-    }
 
-    rootRender = (Component) => {
-      render(
-        <AppContainer>
-          <Routes />
-        </AppContainer>,
-        document.body,
-        rootRender);
-    };
-  }
+if (process.env.preact && process.env.NODE_ENV !== 'production') {
+  require('preact/devtools');
+}
+// tslint:enable
 
-  rootRender(Routes);
+rootRender(Routes);
 
-};
-
-init();
 
 if (module.hot) {
-  module.hot.accept('./containers/routes', init);
+  module.hot.accept('./containers/routes', () => { rootRender(Routes); });
 }

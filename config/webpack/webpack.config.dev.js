@@ -47,11 +47,6 @@ module.exports = env => WPMerge(
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
       new WebpackDashboard(),
-      new webpack.DefinePlugin({
-        'process.env': {
-          __REACT_HOT_LOADER__: true
-        }
-      }),
       new webpack.NamedModulesPlugin()
     ],
     devServer: {
@@ -60,7 +55,6 @@ module.exports = env => WPMerge(
       historyApiFallback: true,
       overlay: true,
       port: 8080,
-      hot: true,
       publicPath: '/',
       stats: {
         colors: true
