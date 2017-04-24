@@ -6,6 +6,7 @@
 		"EditorConfig.editorconfig",
 		"dbaeumer.vscode-eslint",
 		"eg2.vscode-npm-script",
-		"jpoissonnier.vscode-styled-components"
+		"jpoissonnier.vscode-styled-components",
+		"eg2.tslint"
 	]
 }
