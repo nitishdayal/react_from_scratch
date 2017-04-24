@@ -1,0 +1,45 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:latest",
+        "tslint-react"
+    ],
+    "rules": {
+        "quotemark": [
+            "single"
+        ],
+        "align": [
+            true
+        ],
+        "semicolon": [
+            true,
+            "always"
+        ],
+        "triple-equals": [
+            true,
+            "allow-null-check"
+        ],
+        "cyclomatic-complexity": [
+            true
+        ],
+        "use-isnan": true,
+        "trailing-comma": [
+            false
+        ],
+        "object-literal-shorthand": true,
+        "eofline": true,
+        "indent": [
+            true
+        ],
+        "no-use-before-declare": true,
+        "no-unused-variable": [
+            true
+        ],
+        "no-inferrable-types": [
+            true,
+            "ignore-params"
+        ],
+        "no-trailing-whitespace": true
+    },
+    "rulesDirectory": []
+}

@@ -44,7 +44,6 @@ Webpack Helpers:
 **TODO:**
 
 -   [ ] MobX
--   [ ] TSLint or ESLint or something. Maybe just Prettier the whole damn thing idk.
 
 ## Prerequisites
 

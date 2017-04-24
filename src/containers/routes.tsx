@@ -1,13 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, NavLink, Route } from 'react-router-dom';
 
-import styled from 'styled-components';
 import polished from 'polished';
+import styled from 'styled-components';
 
 import Hello from '../components/hello';
 import Page2 from '../components/page2';
 import Root from './root';
-
 
 const NavWrapper = styled.nav`
   display: flex;
@@ -31,7 +30,7 @@ const StyledLink = styled(NavLink) `
       color: white;
       font-variant: initial;
     }
-`
+`;
 
 const RouterWrapper = styled.div`
   padding: 0 2em;
@@ -41,7 +40,7 @@ export default () => (
   <Router>
     <Root>
       <NavWrapper>
-        <StyledLink exact to={'/'}>Page 1</StyledLink>
+        <StyledLink exact={true} to={'/'}>Page 1</StyledLink>
         {' | '}
         <StyledLink to={`/page2`}>Page 2</StyledLink>
       </NavWrapper>
@@ -52,10 +51,13 @@ export default () => (
           component={Page2}
         />
         <Route
-          exact path="/"
+          //tslint:disable
+          exact={true}
+          path="/"
           render={() => (<Hello bundler="Webpack" compiler="TypeScript" framework="(P?)React" />)}
+        // tslint:enable
         />
       </RouterWrapper>
     </Root>
   </Router>
-)
+);

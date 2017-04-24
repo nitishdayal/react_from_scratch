@@ -1,16 +1,18 @@
-import React from 'react';
-import { render } from 'react-dom'
 import { normalize } from 'polished';
+import React from 'react';
+import { render } from 'react-dom';
 import { injectGlobal } from 'styled-components';
 import Routes from './containers/routes';
 
-let root;
-
-injectGlobal`${normalize()}`
 function init() {
-  root = render(<Routes />, document.getElementById('content'))
+  // tslint:disable
+  injectGlobal`${normalize()}`
+  // tslint:enable
+  render(<Routes />, document.getElementById('content'));
 }
 
 init();
 
-if (module.hot) module.hot.accept('./containers/routes', init)
+if (module.hot) {
+  module.hot.accept('./containers/routes', init);
+}

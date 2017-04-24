@@ -6,5 +6,8 @@
     "terminal , workbench.action.terminal.toggleTerminal , Toggle terminal panel",
     "telescope , workbench.action.showCommands , Show command palette",
     "bug, workbench.action.debug.start, Launch debug"
-  ]
+  ],
+  "prettier.parser": "babylon",
+  "prettier.singleQuote": true,
+  "prettier.semi": false
 }
