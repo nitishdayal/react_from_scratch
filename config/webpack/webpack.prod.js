@@ -8,7 +8,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const WebpackChunkHash = require('webpack-chunk-hash')
 const WPMerge = require('webpack-merge')
 
-const base = require('./webpack.config')
+const base = require('./webpack')
 
 const src = path.resolve('src')
 

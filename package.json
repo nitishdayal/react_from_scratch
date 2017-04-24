@@ -8,11 +8,11 @@
   "license": "MIT",
   "scripts": {
     "predist": "rm -rf dist",
-    "dist": "webpack --config config/webpack/webpack.config.prod.js",
-    "start": "webpack-dashboard -- webpack-dev-server --config config/webpack/webpack.config.dev.js",
+    "dist": "webpack --config config/webpack/webpack.prod.js",
+    "start": "webpack-dashboard -- webpack-dev-server --config config/webpack/webpack.dev.js",
     "predist:preact": "rm -rf dist",
-    "dist:preact": "webpack --config config/webpack/webpack.config.preact.prod.js",
-    "start:preact": "webpack-dev-server --config config/webpack/webpack.config.preact.prod.js"
+    "dist:preact": "webpack --config config/webpack/webpack.preact.prod.js",
+    "start:preact": "webpack-dev-server --config config/webpack/webpack.preact.prod.js"
   },
   "dependencies": {
     "polished": "^1.0.3",
