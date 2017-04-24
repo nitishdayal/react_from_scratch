@@ -21,6 +21,7 @@ const StyledLink = styled(NavLink) `
     color: lightgray;
     display: flex;
     font-family: Tahoma;
+    font-variant: small-caps;
     justify-content: center;
     text-align: center;
     text-decoration: none;
@@ -28,7 +29,7 @@ const StyledLink = styled(NavLink) `
 
     &.active {
       color: white;
-      font-variant: small-caps;
+      font-variant: initial;
     }
 `
 
@@ -36,25 +37,25 @@ const RouterWrapper = styled.div`
   padding: 0 2em;
 `;
 
-const Routes = () => (
+export default () => (
   <Router>
     <Root>
       <NavWrapper>
         <StyledLink exact to={'/'}>Page 1</StyledLink>
-        <span>|</span>
+        {' | '}
         <StyledLink to={`/page2`}>Page 2</StyledLink>
       </NavWrapper>
 
       <RouterWrapper>
         <Route
           path="/page2"
-          component={Page2} />
+          component={Page2}
+        />
         <Route
           exact path="/"
-          render={() => (<Hello bundler="Webpack" compiler="TypeScript" framework="(P?)React" />)} />
+          render={() => (<Hello bundler="Webpack" compiler="TypeScript" framework="(P?)React" />)}
+        />
       </RouterWrapper>
     </Root>
   </Router>
 )
-
-export default Routes;

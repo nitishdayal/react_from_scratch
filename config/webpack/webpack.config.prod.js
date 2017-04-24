@@ -58,6 +58,7 @@ module.exports = env => WPMerge(
         minimize: true,
         debug: false
       }),
+      new webpack.optimize.AggressiveMergingPlugin(),
       new webpack.optimize.CommonsChunkPlugin({
         names: ['vendor', 'manifest'],
         minChunks: Infinity

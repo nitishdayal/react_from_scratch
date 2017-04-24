@@ -1,7 +1,7 @@
 # React From Scratch: TypeScript + React + Webpack boilerplate
 
 > Author: Nitish Dayal, Software & Applications Developer  
-> Last Commit Date: April 23nd, 2017
+> Last Commit Date: April 24nd, 2017
 
 ## About
 
@@ -24,9 +24,10 @@ Libraries:
 
 Tools:
 
+-   Preact Compat - 3.15.0
 -   TypeScript - @next
 -   Webpack - 2.4.1
--   Preact Compat - 3.15.0
+-   React Hot Loader - 3.0.0-beta.6
 
 Webpack Helpers:
 
@@ -42,7 +43,6 @@ Webpack Helpers:
 
 **TODO:**
 
--   [ ] HMR please
 -   [ ] MobX
 -   [ ] TSLint or ESLint or something. Maybe just Prettier the whole damn thing idk.
 
@@ -52,16 +52,12 @@ Global:
 
 -   NodeJS
 -   NPM/Yarn
--   TypeScript
 
 ## Commands
 
--   `npm run dev/yarn dev` - Spin up dev environment on <http://localhost:8080> & open browser
-    -   `npm run dev:preact/yarn dev:preact` - ^ but w/ Preact!
--   `npm start/yarn start` - Spin up production env on <http://localhost:8080> & open browser
-    -   `npm run start:preact/yarn start:preact` - ^ but w/ Preact!
--   `npm run build/yarn build` - Build production-ready bundle
-    -   `npm run build:preact/yarn build:preact` - ^ but w/ Preact!
+-   `npm start`/`yarn start`: Start development environment
+-   `npm run dist`/`yarn dist`: Create distribution bundle
+-   `npm run dist:preact`/`yarn dist:preact`: Create distribution bundle, utilizing Preact via preact-compat to reduce vendor bundle (learn more about Preact, you'll end up learning more about React).
 
 ## Errors
 

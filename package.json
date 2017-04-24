@@ -7,12 +7,12 @@
   "author": "Nitish Dayal <nitishdayal@outlook.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack-dashboard -- webpack-dev-server --config config/webpack/webpack.config.dev.js",
-    "build": "rm -rf dist; webpack --config config/webpack/webpack.config.prod.js",
-    "start": "webpack-dashboard -- webpack-dev-server --config config/webpack/webpack.config.prod.js --env='production'",
-    "dev:preact": "webpack-dashboard -- webpack-dev-server --config config/webpack/preact/webpack.config.preact.js",
-    "build:preact": "rm -rf dist; webpack --config config/webpack/preact/webpack.config.preact.prod.js",
-    "start:preact": "webpack-dashboard -- webpack-dev-server --config config/webpack/preact/webpack.config.preact.prod.js"
+    "predist": "rm -rf dist",
+    "dist": "webpack --config config/webpack/webpack.config.prod.js",
+    "start": "webpack-dashboard -- webpack-dev-server --config config/webpack/webpack.config.dev.js",
+    "predist:preact": "rm -rf dist",
+    "dist:preact": "webpack --config config/webpack/preact/webpack.config.preact.prod.js",
+    "start:preact": "webpack-dev-server --config config/webpack/preact/webpack.config.preact.prod.js"
   },
   "dependencies": {
     "polished": "^1.0.3",
@@ -31,6 +31,7 @@
     "chunk-manifest-webpack-plugin": "^1.0.0",
     "html-webpack-plugin": "^2.28.0",
     "preact-compat": "^3.15.0",
+    "react-hot-loader": "^3.0.0-beta.6",
     "source-map-loader": "^0.2.1",
     "ts-loader": "^2.0.3",
     "typescript": "next",
@@ -38,7 +39,7 @@
     "webpack": "^2.4.1",
     "webpack-chunk-hash": "^0.4.0",
     "webpack-dashboard": "^0.3.0",
-    "webpack-dev-server": "^2.4.3",
+    "webpack-dev-server": "^2.4.4",
     "webpack-merge": "^4.1.0"
   }
 }
