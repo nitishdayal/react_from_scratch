@@ -8,14 +8,6 @@ const src = path.resolve('src')
 
 module.exports = env => ({
   context: path.resolve('.'),
-  devtool: 'cheap-module-eval-source-map',
-  entry: path.join(src, 'main'),
-  output: {
-    path: path.resolve('dist'),
-    pathinfo: true,
-    publicPath: '/',
-    filename: 'static/js/bundle.js'
-  },
   module: {
     rules: [
       {
@@ -29,7 +21,6 @@ module.exports = env => ({
     ]
   },
   plugins: [
-    new DashboardPlugin(),
     new HtmlWebpackPlugin({
       inject: 'body',
       template: './index.html'

@@ -23,7 +23,6 @@ Currently, this boilerplate uses:
 **TODO:**
 
 -   [ ] HMR please
--   [ ] ✅ VSCode debugger + task runner config (half way there!)
 -   [ ] MobX
 -   [ ] TSLint or ESLint or something. Maybe just Prettier the whole damn thing idk.
 
