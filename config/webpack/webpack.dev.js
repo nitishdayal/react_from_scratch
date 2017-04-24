@@ -3,7 +3,7 @@ const WPMerge = require('webpack-merge')
 const WebpackDashboard = require('webpack-dashboard/plugin')
 const path = require('path')
 const webpack = require('webpack')
-const base = require('./webpack.config')
+const base = require('./webpack.js')
 
 const src = path.resolve('src')
 const main = path.join(src, 'main')

@@ -1,7 +1,7 @@
 const webpack = require('webpack')
 
 module.exports = env => {
-  const conf = require('./webpack.config.prod')(env)
+  const conf = require('./webpack.dev')(env)
 
   conf.resolve.alias = {
     'react': 'preact-compat',
