@@ -25,9 +25,11 @@ Libraries:
 Tools:
 
 -   Preact Compat - 3.15.0
+-   React Hot Loader - 3.0.0-beta.6
+-   TSLint - 5.1.0
+-   TSLint React - 2.6.0
 -   TypeScript - @next
 -   Webpack - 2.4.1
--   React Hot Loader - 3.0.0-beta.6
 
 Webpack Helpers:
 
