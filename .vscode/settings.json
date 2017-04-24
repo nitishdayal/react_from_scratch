@@ -1,3 +1,10 @@
 {
-  "typescript.tsdk": "./node_modules/typescript/lib"
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "shortcuts.buttons": [
+    "file-binary , workbench.action.tasks.build , Run build task",
+    "file-binary , workbench.action.tasks.build:preact , Run build:preact task",
+    "terminal , workbench.action.terminal.toggleTerminal , Toggle terminal panel",
+    "telescope , workbench.action.showCommands , Show command palette",
+    "bug, workbench.action.debug.start, Launch debug"
+  ]
 }

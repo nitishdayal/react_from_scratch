@@ -11,7 +11,7 @@
       "taskName": "build",
       "args": [
         "run",
-        "build"
+        "dist"
       ],
       "isBuildCommand": true
     },
@@ -19,7 +19,7 @@
       "taskName": "build:preact",
       "args": [
         "run",
-        "build:preact"
+        "dist:preact"
       ]
     }
   ]
