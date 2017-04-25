@@ -45,6 +45,7 @@ module.exports = env => WPMerge(
       ]
     },
     plugins: [
+
       new WebpackDashboard(),
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NamedModulesPlugin()
