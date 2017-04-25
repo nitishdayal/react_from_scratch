@@ -3,7 +3,7 @@ const WPMerge = require('webpack-merge')
 const WebpackDashboard = require('webpack-dashboard/plugin')
 const path = require('path')
 const webpack = require('webpack')
-const base = require('./webpack')
+const base = require('./webpack.js')
 
 const src = path.resolve('src')
 const main = path.join(src, 'main')
@@ -37,30 +37,25 @@ module.exports = env => WPMerge(
           test: /\.ts(x?)$/,
           include: src,
           use: [
-            { loader: 'source-map-loader', options: { enforce: 'pre' } },
+            { loader: 'react-hot-loader/webpack' },
             { loader: 'ts-loader', options: { transpileOnly: true } },
-            { loader: 'react-hot-loader/webpack' }
+            { loader: 'source-map-loader', options: { enforce: 'pre' } },
           ]
         }
       ]
     },
     plugins: [
-      new webpack.HotModuleReplacementPlugin(),
+
       new WebpackDashboard(),
-      new webpack.DefinePlugin({
-        'process.env': {
-          __REACT_HOT_LOADER__: true
-        }
-      }),
+      new webpack.HotModuleReplacementPlugin(),
       new webpack.NamedModulesPlugin()
     ],
     devServer: {
-      contentBase: path.resolve('src'),
-      compress: true,
+      contentBase: src,
       historyApiFallback: true,
       overlay: true,
-      port: 8080,
       hot: true,
+      port: 8080,
       publicPath: '/',
       stats: {
         colors: true

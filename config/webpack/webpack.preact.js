@@ -1,7 +1,8 @@
 const webpack = require('webpack')
 const WPMerge = require('webpack-merge')
 
-const baseConf = require('./webpack.prod')
+const baseConf = require('./webpack.dev')
+
 module.exports = env => WPMerge(
   baseConf(env),
   {
@@ -14,10 +15,10 @@ module.exports = env => WPMerge(
     ],
     resolve: {
       alias: {
+        'preact-compat': 'preact-compat/dist/preact-compat.js',
         'react': 'preact-compat',
         'react-dom': 'preact-compat'
       }
     }
   }
 )
-
