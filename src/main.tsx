@@ -1,34 +1,42 @@
+// tslint:disable
 import { normalize } from 'polished';
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { injectGlobal } from 'styled-components';
+
 import Routes from './containers/routes';
 
-let rootRender;
+const content = document.getElementById('content');
+let init: () => void;
 
-rootRender = (Component) => {
-  ReactDOM.render(
+injectGlobal`${normalize()}`
+
+init = () => {
+  render(
     <AppContainer>
-      <Component />
+      <Routes />
     </AppContainer>,
-    document.getElementById('content')
+    content
   );
 };
 
+if (process.env.preact) {
+  const p = require('preact').render
+  let root;
 
-// tslint:disable
-injectGlobal`${normalize()}`
-
-
-if (process.env.preact && process.env.NODE_ENV !== 'production') {
-  require('preact/devtools');
+  init = () => {
+    root = p(
+      <Routes />,
+      document.body,
+      root
+    )
+  }
+  if (module.hot) {
+    require('preact/devtools')
+  }
 }
-// tslint:enable
 
-rootRender(Routes);
+if (module.hot) module.hot.accept('./containers/routes', () => requestAnimationFrame(init))
 
-
-if (module.hot) {
-  module.hot.accept('./containers/routes', () => { rootRender(Routes); });
-}
+init();

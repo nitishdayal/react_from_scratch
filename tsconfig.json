@@ -15,9 +15,6 @@
     "skipLibCheck": true,
     "strictNullChecks": true,
     "target": "es5",
-    "typeRoots": [
-      "./node_modules/@types"
-    ],
     "types": [
       "react",
       "react-dom",

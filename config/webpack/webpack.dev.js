@@ -37,23 +37,23 @@ module.exports = env => WPMerge(
           test: /\.ts(x?)$/,
           include: src,
           use: [
-            { loader: 'source-map-loader', options: { enforce: 'pre' } },
+            { loader: 'react-hot-loader/webpack' },
             { loader: 'ts-loader', options: { transpileOnly: true } },
-            { loader: 'react-hot-loader/webpack' }
+            { loader: 'source-map-loader', options: { enforce: 'pre' } },
           ]
         }
       ]
     },
     plugins: [
-      new webpack.HotModuleReplacementPlugin(),
       new WebpackDashboard(),
+      new webpack.HotModuleReplacementPlugin(),
       new webpack.NamedModulesPlugin()
     ],
     devServer: {
-      contentBase: path.resolve('src'),
-      compress: true,
+      contentBase: src,
       historyApiFallback: true,
       overlay: true,
+      hot: true,
       port: 8080,
       publicPath: '/',
       stats: {

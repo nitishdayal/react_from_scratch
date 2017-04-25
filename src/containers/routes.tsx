@@ -11,7 +11,7 @@ import Root from './root';
 const NavWrapper = styled.nav`
   display: flex;
   justify-content: center;
-  background-color: steelblue;
+  background-color: purple;
   color: white;
   padding: .5em 0;
 `;
@@ -25,6 +25,10 @@ const StyledLink = styled(NavLink) `
     text-align: center;
     text-decoration: none;
     width: 60px;
+    
+    &:hover {
+      color: red
+    }
 
     &.active {
       color: white;
@@ -36,7 +40,7 @@ const RouterWrapper = styled.div`
   padding: 0 2em;
 `;
 
-export default () => (
+const Routes = () => (
   <Router>
     <Root>
       <NavWrapper>
@@ -61,3 +65,5 @@ export default () => (
     </Root>
   </Router>
 );
+
+export default Routes;

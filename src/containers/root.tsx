@@ -1,5 +1,5 @@
 import React from 'react';
 
-const Root = ({ children }: RootContainerProps) => <div>{children}</div>;
+const container = ({ children }: RootContainerProps) => <div>{children}</div>;
 
-export default Root;
+export default container;
