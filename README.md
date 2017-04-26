@@ -15,6 +15,7 @@ This boilerplate utilizes the following packages as dependencies.
 
 Libraries:
 
+-   MobX - 3.1.9
 -   Polished - 1.0.3
 -   Preact - 8.1.0
 -   React - 15.5.4
@@ -24,6 +25,8 @@ Libraries:
 
 Tools:
 
+-   MobX React - 4.1.8
+-   MobX Devtools - 0.2.6
 -   Preact Compat - 3.15.0
 -   React Hot Loader - 3.0.0-beta.6
 -   TSLint - 5.1.0
@@ -43,10 +46,6 @@ Webpack Helpers:
 -   Webpack Dev Server - 2.4.3
 -   Webpack Merge - 4.1.0
 
-**TODO:**
-
--   [ ] MobX
-
 ## Prerequisites
 
 Global:
@@ -56,10 +55,9 @@ Global:
 
 ## Commands
 
--   `npm start`/`yarn start`: Start development environment
--   `npm run dist`/`yarn dist`: Create distribution bundle
--   `npm run dist:preact`/`yarn dist:preact`: Create distribution bundle, utilizing Preact via preact-compat to reduce vendor bundle (learn more about Preact, you'll end up learning more about React).
-    -   `npm run start:preact`/`yarn start:preact`: Test out the Preact build ~~(just in case, u no)~~
+-   `npm run dev/npm run dev:preact` - Dev environment (optionally w/ Preact)
+-   `npm start/npm run start:preact` - Test production build (optionally w/ Preact)
+-   `npm run dist/npm run dist:preact` - Create distribution-ready bundle (optionally w/ Preact)
 
 ## Errors
 
