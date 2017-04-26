@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
     "diagnostics": true,
     "forceConsistentCasingInFileNames": true,
     "jsx": "react",

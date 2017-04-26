@@ -17,6 +17,8 @@
     "start:preact": "webpack-dev-server --config config/webpack/webpack.preact.prod.js"
   },
   "dependencies": {
+    "mobx": "^3.1.9",
+    "mobx-react": "^4.1.8",
     "polished": "^1.0.3",
     "preact": "^8.1.0",
     "react": "^15.5.4",
@@ -32,6 +34,8 @@
     "@types/webpack-env": "^1.13.0",
     "chunk-manifest-webpack-plugin": "^1.1.0",
     "html-webpack-plugin": "^2.28.0",
+    "mobx-react-devtools": "^4.2.11",
+    "mobx-remotedev": "^0.2.6",
     "preact-compat": "^3.15.0",
     "react-hot-loader": "^3.0.0-beta.6",
     "source-map-loader": "^0.2.1",
