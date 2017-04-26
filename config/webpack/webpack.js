@@ -11,11 +11,10 @@ module.exports = env => ({
   module: {
     rules: [
       {
-        test: /\.ts(x?)$/,
-        include: path.resolve('src'),
+        test: /\.js(x?)$/,
+        exclude: /node_modules/,
         use: [
-          { loader: 'source-map-loader', options: { enforce: 'pre' } },
-          { loader: 'ts-loader', options: { transpileOnly: true } }
+          { loader: 'source-map-loader', options: { enforce: 'pre' } }
         ]
       }
     ]
