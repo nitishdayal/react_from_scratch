@@ -2,30 +2,38 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import { observer } from 'mobx-react';
-import { observable } from 'mobx';
+import store from '../store/listItems'
 
-
-
-const listItems = observable(['first item', 'second item', 'third item'])
-
-@observer class Page2 extends Component<{}, {}> {
-
-
-  addItem = () => listItems.push('New item!')
+class Page2 extends Component<{}, {}> {
 
   render() {
 
-    const displayList = listItems.map((li, i) => (<li key={i}>{li}</li>))
-
     return (
-      <div>
-        <button onClick={this.addItem}>Add an item!</button>
-        <ul>
-          {displayList}
-        </ul>
+      <div style={{
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'baseline'
+      }}>
+        <button onClick={store.addItem}>Add an item!</button>
+        <DisplayList listItems={store.listItems} />
+        <button onClick={store.delItem}>Delete an item!</button>
       </div>
     )
   }
 }
+
+
+export const DisplayList = observer(({ listItems }: { listItems: string[] }) => {
+  const displayItems = listItems.map(
+    (l, i) => <li key={i}>{l}</li>
+  )
+
+  return (
+    <ul style={{ padding: '0 2em' }}>
+      {displayItems}
+    </ul>
+  )
+})
 
 export default Page2;
