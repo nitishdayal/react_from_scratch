@@ -1,6 +1,5 @@
 import React from 'react';
-import DevTools from 'mobx-react-devtools'
 
-const container = ({ children }: RootContainerProps) => <div>{children}<DevTools /></div>;
+const container = ({ children }: RootContainerProps) => <div>{children}</div>;
 
 export default container;

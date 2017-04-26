@@ -2,7 +2,7 @@ import { observer } from 'mobx-react';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import store from '../store/listItems'
+import { ListWrapper } from '../styled';
 
 
 const DisplayList = observer(({ listItems }: { listItems: string[] }) => {
@@ -17,17 +17,12 @@ const DisplayList = observer(({ listItems }: { listItems: string[] }) => {
   )
 })
 
-const Page2 = () => (
-  <div style={{
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'baseline'
-  }}>
+const Page2 = ({ store }) => (
+  <ListWrapper>
     <button onClick={store.addItem}>Add an item!</button>
     <DisplayList listItems={store.listItems} />
     <button onClick={store.delItem}>Delete an item!</button>
-  </div>
+  </ListWrapper>
 )
 
 export default Page2;

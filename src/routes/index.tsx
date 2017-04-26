@@ -1,44 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, NavLink, Route } from 'react-router-dom';
 
+import DevTools from 'mobx-react-devtools';
 import polished from 'polished';
 import styled from 'styled-components';
 
 import Hello from '../components/hello';
 import Page2 from '../components/page2';
-import Root from './root';
+import Root from '../containers/root';
+import { NavWrapper, RouterWrapper, StyledLink } from '../styled';
+import Store from '../store/listItems';
 
-const NavWrapper = styled.nav`
-  display: flex;
-  justify-content: center;
-  background-color: purple;
-  color: white;
-  padding: .5em 0;
-`;
-
-const StyledLink = styled(NavLink) `
-    color: lightgray;
-    display: flex;
-    font-family: Tahoma;
-    font-variant: small-caps;
-    justify-content: center;
-    text-align: center;
-    text-decoration: none;
-    width: 60px;
-    
-    &:hover {
-      color: red
-    }
-
-    &.active {
-      color: white;
-      font-variant: initial;
-    }
-`;
-
-const RouterWrapper = styled.div`
-  padding: 0 2em;
-`;
 
 const Routes = () => (
   <Router>
@@ -52,16 +24,15 @@ const Routes = () => (
       <RouterWrapper>
         <Route
           path="/page2"
-          component={Page2}
+          render={() => <Page2 store={new Store()} />}
         />
         <Route
-          //tslint:disable
           exact={true}
           path="/"
           render={() => (<Hello bundler="Webpack" compiler="TypeScript" framework="(P?)React" />)}
-        // tslint:enable
         />
       </RouterWrapper>
+      <DevTools />
     </Root>
   </Router>
 );

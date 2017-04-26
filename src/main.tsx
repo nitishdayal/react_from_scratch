@@ -1,14 +1,17 @@
-// tslint:disable
 import { normalize } from 'polished';
 import React from 'react';
 import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { injectGlobal } from 'styled-components';
+import DevTools from 'mobx-react-devtools';
 
-import Routes from './containers/routes';
+import Routes from './routes';
+
+
+// tslint:disable
+let init: () => void;
 
 const content = document.getElementById('content');
-let init: () => void;
 
 injectGlobal`${normalize()}`
 
@@ -37,6 +40,6 @@ if (process.env.preact) {
   }
 }
 
-if (module.hot) module.hot.accept('./containers/routes', () => requestAnimationFrame(init))
-
 init();
+
+if (module.hot) module.hot.accept('./routes', () => requestAnimationFrame(init))

@@ -35,7 +35,6 @@
     "chunk-manifest-webpack-plugin": "^1.1.0",
     "html-webpack-plugin": "^2.28.0",
     "mobx-react-devtools": "^4.2.11",
-    "mobx-remotedev": "^0.2.6",
     "preact-compat": "^3.15.0",
     "react-hot-loader": "^3.0.0-beta.6",
     "source-map-loader": "^0.2.1",

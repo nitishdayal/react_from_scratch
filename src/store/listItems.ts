@@ -1,19 +1,13 @@
 import { observable, action } from 'mobx';
-import remotedev from 'mobx-remotedev';
 
 
-@remotedev
-class Store {
 
-  @observable listItems: string[]
+export default class Store {
 
-  constructor() {
-    this.listItems = ['first item', 'second item', 'third item']
-  }
+  @observable listItems = ['first item', 'second item', 'third item']
 
-  @action addItem = () => this.listItems.push('new item!');
-  @action delItem = () => this.listItems.pop();
+  @action addItem = () => { this.listItems.push(prompt('Type stuff!') || 'Another item!'); }
+
+  @action delItem = () => { this.listItems.pop(); }
 
 }
-
-export default remotedev(new Store())
