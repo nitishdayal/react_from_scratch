@@ -43,6 +43,7 @@
             "ignore-params"
         ],
         "no-trailing-whitespace": true,
+        "no-var-requires": false,
         "jsx-no-lambda": false
     },
     "rulesDirectory": []

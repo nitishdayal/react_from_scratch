@@ -1,20 +1,17 @@
-import { normalize } from 'polished';
+import DevTools from 'mobx-react-devtools';
 import React from 'react';
+
+import { normalize } from 'polished';
 import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { injectGlobal } from 'styled-components';
 
-import DevTools from 'mobx-react-devtools';
-
 import Routes from './routes';
 
-
-// tslint:disable
 let init: () => void;
-
 const content = document.getElementById('content');
 
-injectGlobal`${normalize()}`
+injectGlobal`${normalize()}`;
 
 init = () => {
   render(
@@ -26,7 +23,7 @@ init = () => {
 };
 
 if (process.env.preact) {
-  const p = require('preact').render
+  const p = require('preact').render;
   let root;
 
   init = () => {
@@ -34,13 +31,13 @@ if (process.env.preact) {
       <Routes />,
       document.body,
       root
-    )
-  }
+    );
+  };
   if (module.hot) {
-    require('preact/devtools')
+    require('preact/devtools');
   }
 }
 
 init();
 
-if (module.hot) module.hot.accept('./routes', () => requestAnimationFrame(init))
+if (module.hot) { module.hot.accept('./routes', () => requestAnimationFrame(init)); }
