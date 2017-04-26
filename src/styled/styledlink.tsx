@@ -21,4 +21,4 @@ const StyledLink = styled(NavLink) `
   }
 `;
 
-export { StyledLink }
+export { StyledLink };

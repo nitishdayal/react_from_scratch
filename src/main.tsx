@@ -3,6 +3,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { injectGlobal } from 'styled-components';
+
 import DevTools from 'mobx-react-devtools';
 
 import Routes from './routes';

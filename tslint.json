@@ -31,15 +31,19 @@
         "indent": [
             true
         ],
+        "member-access": [
+            false
+        ],
         "no-use-before-declare": true,
         "no-unused-variable": [
-            true
+            false
         ],
         "no-inferrable-types": [
             true,
             "ignore-params"
         ],
-        "no-trailing-whitespace": true
+        "no-trailing-whitespace": true,
+        "jsx-no-lambda": false
     },
     "rulesDirectory": []
 }

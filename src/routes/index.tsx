@@ -8,9 +8,8 @@ import styled from 'styled-components';
 import Hello from '../components/hello';
 import Page2 from '../components/page2';
 import Root from '../containers/root';
-import { NavWrapper, RouterWrapper, StyledLink } from '../styled';
 import Store from '../store/listItems';
-
+import { NavWrapper, RouterWrapper, StyledLink } from '../styled';
 
 const Routes = () => (
   <Router>

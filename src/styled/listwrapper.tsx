@@ -1,5 +1,4 @@
-import styled from 'styled-components'
-
+import styled from 'styled-components';
 
 const ListWrapper = styled.div`
   display: flex;
