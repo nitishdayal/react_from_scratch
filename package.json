@@ -10,7 +10,7 @@
     "dev": "webpack-dashboard -- webpack-dev-server --config config/webpack/webpack.dev.js",
     "predist": "rm -rf dist",
     "dist": "webpack --config config/webpack/webpack.prod.js",
-    "start": "webpack-dashboard -- webpack-dev-server --config config/webpack/webpack.prod.js",
+    "start": "webpack-dev-server --config config/webpack/webpack.prod.js",
     "dev:preact": "webpack-dashboard -- webpack-dev-server --config config/webpack/webpack.preact.js",
     "predist:preact": "rm -rf dist",
     "dist:preact": "webpack --config config/webpack/webpack.preact.prod.js",

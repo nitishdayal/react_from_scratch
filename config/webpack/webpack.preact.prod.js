@@ -2,6 +2,7 @@ const webpack = require('webpack')
 const WPMerge = require('webpack-merge')
 
 const baseConf = require('./webpack.prod')
+
 module.exports = env => WPMerge(
   baseConf(env),
   {
