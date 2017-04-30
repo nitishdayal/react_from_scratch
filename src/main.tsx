@@ -8,12 +8,10 @@ import { injectGlobal } from 'styled-components';
 
 import Routes from './routes';
 
-let init;
+injectGlobal`${normalize()}`;
 const content = document.getElementById('content');
 
-injectGlobal`${normalize()}`;
-
-init = () => {
+let init = () => {
   render(
     <AppContainer>
       <Routes />
