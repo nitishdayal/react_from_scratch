@@ -32,6 +32,19 @@ module.exports = env => WPMerge(
       filename: 'static/js/[name].[chunkhash:8].js',
       chunkFilename: 'static/js/[name].[chunkhash:8].js'
     },
+    module: {
+      rules: [
+        {
+          test: /\.ts(x?)$/,
+          include: src,
+          use: [
+            { loader: 'react-hot-loader/webpack' },
+            { loader: 'ts-loader', options: { transpileOnly: true } },
+            { loader: 'source-map-loader', options: { enforce: 'pre' } },
+          ]
+        }
+      ]
+    },
     plugins: [
       new HtmlWebpackPlugin({
         inject: 'body',

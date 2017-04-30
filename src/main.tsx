@@ -8,7 +8,7 @@ import { injectGlobal } from 'styled-components';
 
 import Routes from './routes';
 
-let init: () => void;
+let init;
 const content = document.getElementById('content');
 
 injectGlobal`${normalize()}`;
