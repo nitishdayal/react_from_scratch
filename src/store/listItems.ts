@@ -1,5 +1,6 @@
-import { action, observable } from 'mobx';
+import { action, observable, useStrict } from 'mobx';
 
+useStrict(true);
 export default class Store {
 
   @observable listItems = ['first item', 'second item', 'third item'];

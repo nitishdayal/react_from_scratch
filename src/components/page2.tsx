@@ -2,7 +2,7 @@ import { observer } from 'mobx-react';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import { ListWrapper } from '../styled';
+import { ListWrapper } from './styled';
 
 const DisplayList = observer(({ listItems }: { listItems: string[] }) => {
   const displayItems = listItems.map((l, i) => <li key={i}>{l}</li>);

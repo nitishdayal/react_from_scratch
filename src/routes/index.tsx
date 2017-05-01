@@ -5,11 +5,13 @@ import DevTools from 'mobx-react-devtools';
 import polished from 'polished';
 import styled from 'styled-components';
 
+import { NavWrapper, RouterWrapper, StyledLink } from '../components/styled';
+
+import Root from '../components/containers/root';
 import Hello from '../components/hello';
 import Page2 from '../components/page2';
-import Root from '../containers/root';
 import Store from '../store/listItems';
-import { NavWrapper, RouterWrapper, StyledLink } from '../styled';
+
 
 const Routes = () => (
   <Router>
@@ -31,7 +33,7 @@ const Routes = () => (
           render={() => (<Hello bundler="Webpack" compiler="TypeScript" framework="(P?)React" />)}
         />
       </RouterWrapper>
-      <DevTools />
+      {process.env.NODE_ENV !== 'production' && <DevTools />}
     </Root>
   </Router>
 );
