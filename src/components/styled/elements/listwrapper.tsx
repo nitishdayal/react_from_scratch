@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 
-const ListWrapper = styled.div`
+export const ListWrapper = styled.div`
   display: flex;
   flexDirection: row;
   justifyContent: center;
   alignItems: baseline;
 `;
-
-export { ListWrapper }

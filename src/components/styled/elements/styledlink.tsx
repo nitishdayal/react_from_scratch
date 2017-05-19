@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-const StyledLink = styled(NavLink) `
+export const StyledLink = styled(NavLink) `
   color: lightgray;
   display: flex;
   font-family: Tahoma;
@@ -20,5 +20,3 @@ const StyledLink = styled(NavLink) `
     font-variant: initial;
   }
 `;
-
-export { StyledLink };

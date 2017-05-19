@@ -1,4 +1,4 @@
-import { action, observable, useStrict } from 'mobx';
+import { action, observable, computed, useStrict } from 'mobx';
 
 useStrict(true);
 export default class Store {

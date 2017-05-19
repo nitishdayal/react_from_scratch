@@ -3,16 +3,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import { ListWrapper } from './styled';
+import DisplayList from './displayItems';
 
-const DisplayList = observer(({ listItems }: { listItems: string[] }) => {
-  const displayItems = listItems.map((l, i) => <li key={i}>{l}</li>);
-
-  return (
-    <ul style={{ padding: '0 2em' }}>
-      {displayItems}
-    </ul>
-  );
-});
 
 const Page2 = ({ store }) => (
   <ListWrapper>
