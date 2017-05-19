@@ -10,7 +10,7 @@ export const StyledLink = styled(NavLink) `
   text-align: center;
   text-decoration: none;
   width: 60px;
-  
+
   &:hover {
     color: red;
   }

@@ -1,9 +1,9 @@
-declare interface HelloProps {
+declare type HelloProps = {
   compiler: string;
   framework: string;
   bundler: string;
 }
 
-declare interface RootContainerProps {
-  children?: React.ReactChild | React.ReactChildren
+declare type RootContainerProps = {
+  children: (false | JSX.Element)[]
 }

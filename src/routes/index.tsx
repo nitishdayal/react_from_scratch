@@ -10,10 +10,8 @@ import { NavWrapper, RouterWrapper, StyledLink } from '../components/styled';
 import Root from '../components/containers/root';
 import Hello from '../components/hello';
 import Page2 from '../components/page2';
-import Store from '../store/listItems';
 
-
-const Routes = () => (
+export default ({ store }) => (
   <Router>
     <Root>
       <NavWrapper>
@@ -25,7 +23,7 @@ const Routes = () => (
       <RouterWrapper>
         <Route
           path="/page2"
-          render={() => <Page2 store={new Store()} />}
+          component={() => <Page2 store={store} />}
         />
         <Route
           exact={true}
@@ -37,5 +35,3 @@ const Routes = () => (
     </Root>
   </Router>
 );
-
-export default Routes;

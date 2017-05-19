@@ -5,7 +5,6 @@ const webpack = require('webpack')
 const CompressionPlugin = require('compression-webpack-plugin')
 const ChunkManifestWebpackPlugin = require('chunk-manifest-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const WebpackChunkHash = require('webpack-chunk-hash')
 const WPMerge = require('webpack-merge')
 
@@ -87,7 +86,7 @@ module.exports = env => WPMerge(
         filename: 'chunk-manifest.json',
         manifestVariable: 'webpackManifest'
       }),
-      new UglifyJSPlugin({
+      new webpack.optimize.UglifyJsPlugin({
         beautify: false,
         compress: { screw_ie8: true, warnings: false },
         mangle: { screw_ie8: true },

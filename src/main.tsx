@@ -7,14 +7,17 @@ import { AppContainer } from 'react-hot-loader';
 import { injectGlobal } from 'styled-components';
 
 import Routes from './routes';
+import Store from './store/listItems';
 
+// tslint:disable
 injectGlobal`${normalize()}`;
+// tslint:enable
 const content = document.getElementById('content');
 
 let init = () => {
   render(
     <AppContainer>
-      <Routes />
+      <Routes store={Store} />
     </AppContainer>,
     content
   );
@@ -26,12 +29,12 @@ if (process.env.preact) {
 
   init = () => {
     root = p(
-      <Routes />,
+      <Routes store={Store} />,
       document.body,
       root
     );
   };
-  if (module.hot) {
+  if (process.env.NODE_ENV === 'develop') {
     require('preact/devtools');
   }
 }

@@ -1,12 +1,13 @@
-import { action, observable, computed, useStrict } from 'mobx';
+import { action, observable, useStrict } from 'mobx';
+import React from 'react';
 
 useStrict(true);
-export default class Store {
-
+class Store {
   @observable listItems = ['first item', 'second item', 'third item'];
 
   @action addItem = () => { this.listItems.push(prompt('Type stuff!') || 'Another item!'); };
 
   @action delItem = () => { this.listItems.pop(); };
-
 }
+
+export default new Store();
