@@ -47,7 +47,12 @@ module.exports = env => WPMerge(
     plugins: [
       new WebpackDashboard(),
       new webpack.HotModuleReplacementPlugin(),
-      new webpack.NamedModulesPlugin()
+      new webpack.NamedModulesPlugin(),
+      new webpack.DefinePlugin({
+        'process.env': {
+          NODE_ENV: `'development'`
+        }
+      })
     ],
     devServer: {
       contentBase: src,

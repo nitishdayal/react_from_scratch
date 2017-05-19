@@ -31,7 +31,7 @@ export default ({ store }) => (
           render={() => (<Hello bundler="Webpack" compiler="TypeScript" framework="(P?)React" />)}
         />
       </RouterWrapper>
-      {process.env.NODE_ENV !== 'production' && <DevTools />}
+      {process.env.NODE_ENV === 'development' && <DevTools />}
     </Root>
   </Router>
 );

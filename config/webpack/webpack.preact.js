@@ -10,7 +10,7 @@ module.exports = env => WPMerge(
       new webpack.DefinePlugin({
         'process.env': {
           preact: true,
-          NODE_ENV: `'develop'`
+          NODE_ENV: `'development'`
         }
       })
     ],
