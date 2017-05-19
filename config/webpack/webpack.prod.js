@@ -2,6 +2,7 @@
 const path = require('path')
 const webpack = require('webpack')
 
+const CompressionPlugin = require('compression-webpack-plugin')
 const ChunkManifestWebpackPlugin = require('chunk-manifest-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
@@ -40,6 +41,11 @@ module.exports = env => WPMerge(
             { loader: 'ts-loader', options: { transpileOnly: true } },
             { loader: 'source-map-loader', options: { enforce: 'pre' } },
           ]
+        },
+        {
+          test: /\.gz$/,
+          enforce: 'pre',
+          use: 'gzip-loader'
         }
       ]
     },
@@ -87,6 +93,13 @@ module.exports = env => WPMerge(
         mangle: { screw_ie8: true },
         output: { comments: false, screw_ie8: true },
         comments: false
+      }),
+      new CompressionPlugin({
+        asset: '[path].gz[query]',
+        algorithm: 'gzip',
+        test: /\.(js|html)$/,
+        threshold: 10240,
+        minRatio: 0.8
       })
     ]
   }
