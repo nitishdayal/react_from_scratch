@@ -46,6 +46,7 @@
     "tslint": "^5.2.0",
     "tslint-react": "^3.0.0",
     "typescript": "^2.3.2",
+    "uglify-js": "^2.8.29",
     "uglifyjs-webpack-plugin": "^0.4.3",
     "webpack": "^2.5.1",
     "webpack-chunk-hash": "^0.4.0",
